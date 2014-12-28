@@ -20,14 +20,14 @@ namespace MetricsNet
         {
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_PerfFormattedData_PerfOS_Processor WHERE Name<>\"_Total\"");
             var cpuTimes = searcher.Get()
-                                   .Cast<ManagementObject>()
-                                   .Select(mo => new
-                                       {
-                                           Name = mo["Name"],
-                                           Usage = mo["PercentProcessorTime"]
-                                       }
+                                    .Cast<ManagementObject>()
+                                    .Select(mo => new
+                                        {
+                                            Name = mo["Name"],
+                                            Usage = mo["PercentProcessorTime"]
+                                        }
                 )
-                                   .ToList();
+                                    .ToList();
 
             return cpuTimes;
         }
