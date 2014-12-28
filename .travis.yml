@@ -1,0 +1,20 @@
+language: objective-c
+
+branches:
+  except:
+    - net40
+env:
+ global:
+  - EnableNuGetPackageRestore=true
+ matrix:
+  - MONO_VERSION="3.10.0.20"
+before_install:
+ - wget "http://download.mono-project.com/archive/3.10.0/macos-10-x86/MonoFramework-MDK-${MONO_VERSION}.macos10.xamarin.x86.pkg"
+ - sudo installer -pkg "MonoFramework-MDK-${MONO_VERSION}.macos10.xamarin.x86.pkg" -target /
+ 
+script:
+ - xbuild Solution.Sln /p:Configuration="Debug"
+ - xbuild Solution.Sln /p:Configuration="Release"
+ - mono .nuget/NuGet.exe restore Solution.sln 
+ - mono ./packages/NUnit.Runners.2.6.4/tools/nunit.console-x86.exe ./MetricsNet.Tests/bin/Debug/MetricsNet.Tests.dll
+ - mono ./packages/NUnit.Runners.2.6.4/tools/nunit.console-x86.exe ./MetricsNet.Tests/bin/Release/MetricsNet.Tests.dll
