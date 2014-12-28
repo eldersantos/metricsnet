@@ -16,5 +16,5 @@ script:
  - xbuild Solution.Sln /p:Configuration="Debug"
  - xbuild Solution.Sln /p:Configuration="Release"
  - mono .nuget/NuGet.exe restore Solution.sln 
- - mono ./packages/NUnit.Runners.2.6.4/tools/nunit.console-x86.exe ./MetricsNet.Tests/bin/Debug/MetricsNet.Tests.dll
- - mono ./packages/NUnit.Runners.2.6.4/tools/nunit.console-x86.exe ./MetricsNet.Tests/bin/Release/MetricsNet.Tests.dll
+ - mono ./packages/NUnit.Runners.2.6.4/tools/nunit-console-x86.exe ./MetricsNet.Tests/bin/Debug/MetricsNet.Tests.dll
+ - mono ./packages/NUnit.Runners.2.6.4/tools/nunit-console-x86.exe ./MetricsNet.Tests/bin/Release/MetricsNet.Tests.dll
