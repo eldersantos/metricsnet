@@ -11,7 +11,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Cpu_Usages_by_Cores()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var cpus = Instrumentation.GetCpuUsageByCores();
             Assert.IsTrue(cpus.Count > 0);
@@ -22,7 +21,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Cpu_Total_Usage()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var cpus = Instrumentation.GetCpuUsageByCores();
             Assert.IsTrue(cpus.Count > 0);
@@ -33,7 +31,6 @@ namespace MetricsNet.Tests
         public void Should_Return_OSName()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var name = Instrumentation.GetOSName();
             Console.WriteLine(name);
@@ -45,7 +42,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Number_of_Cpus()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var number = Instrumentation.GetNumberOfLogicalProcessors();
             Assert.IsTrue(number>0);
@@ -57,7 +53,6 @@ namespace MetricsNet.Tests
         public void Should_Return_True_For_64bits()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var _64bits = Instrumentation.Is64BitOperatingSystem();
             Assert.IsInstanceOfType(typeof(bool), _64bits );
@@ -68,7 +63,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Number_Of_Threads()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var t = Instrumentation.GetNumberOfThreads();
             Assert.IsTrue(t>0);
@@ -80,7 +74,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Total_Memory_Used()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var t = Instrumentation.GetPhysicalUsedMemory();
             Assert.IsTrue(t > 0);
@@ -91,7 +84,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Total_Memory_Used_In_Percentage()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var t = Instrumentation.GetPhysicalUsedMemoryInPercentage();
             Assert.IsTrue(t > decimal.MinValue);
@@ -103,7 +95,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Total_Memory_Available()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var t = Instrumentation.GetPhysicalAvailableMemory();
             Assert.IsTrue(t > 0);
@@ -115,7 +106,6 @@ namespace MetricsNet.Tests
         public void Should_Return_Total_Memory_Available_in_Percentage()
         {
 #if MONO
-            Assert.Pass("Running on Mono");
 #else
             var t = Instrumentation.GetPhysicalAvailableMemoryInPercentage();
             Assert.IsTrue(t > 0);
