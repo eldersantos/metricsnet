@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Instrumentation.cs" />
+    <Compile Include="OSInfo.cs" />
     <Compile Include="PerformanceInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

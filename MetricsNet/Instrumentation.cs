@@ -94,6 +94,15 @@ namespace MetricsNet
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static string GetOSName()
+        {
+            return OSInfo.Name + " " + OSInfo.Edition;
+        }
+
+        /// <summary>
         /// Returns the available physical memory in percentage
         /// </summary>
         /// <returns></returns>
