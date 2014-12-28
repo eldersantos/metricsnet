@@ -11,7 +11,7 @@ namespace MetricsNet.Tests
         public void Should_Return_Cpu_Usages_by_Cores()
         {
 #if MONO
-            Assert.Throws<NotImplementedException>(() => Instrumentation.GetCpuUsageByCores());
+            Assert.Throws( typeof(NotImplementedException) ,() => Instrumentation.GetCpuUsageByCores());
 #else
             var cpus = Instrumentation.GetCpuUsageByCores();
             Assert.IsTrue(cpus.Count > 0);
@@ -22,7 +22,7 @@ namespace MetricsNet.Tests
         public void Should_Return_Cpu_Total_Usage()
         {
 #if MONO
-            Assert.Throws<NotImplementedException>(() => Instrumentation.GetTotalCpuUsage());
+            Assert.Throws(typeof(NotImplementedException), () => Instrumentation.GetCpuUsageByCores());
 #else
             var cpus = Instrumentation.GetCpuUsageByCores();
             Assert.IsTrue(cpus.Count > 0);
